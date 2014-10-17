@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
 This is a game, where you will flip a virtual coin to get heads or tails, and accumulate results.
+
+
+<div id="result"></div>
+
+<script>
+// Check browser support
+if (typeof(Storage) != "undefined") {
+    // Store
+    localStorage.setItem("heads", "0");
+    localStorage.setItem("tails", "0");
+    // Retrieve
+    document.getElementById("result").innerHTML = 
+"Heads : " + localStorage.getItem("heads") + "<br>Tails : " + localStorage.getItem("tails");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+
+</body>
+</html>
