@@ -10,6 +10,7 @@
 
 <button type="button" onclick="localStorage.heads=0; localStorage.tails=0; updateResults();">Reset Counters</button>
 <button type="button" onclick="localStorage.heads=Number(localStorage.heads)+1; updateResults()">Heads</button>
+<button type="button" onclick="doFlip()">Flip Coin</button>
 <button type="button" onclick="localStorage.tails=Number(localStorage.tails)+1; updateResults()">Tails</button>
 
 <script>
@@ -17,6 +18,18 @@ function updateResults() {
     document.getElementById("result").innerHTML = 
 "Heads : " + localStorage.getItem("heads") + "<br>Tails : " + localStorage.getItem("tails")+
 "<br>Total flips : " + (Number(localStorage.heads)+Number(localStorage.tails));  
+}
+
+function doFlip() {
+  if (Math.random() > 0.5) {
+    // heads
+    localStorage.heads=Number(localStorage.heads)+1; 
+    updateResults();
+  } else {
+    // tails
+    localStorage.tails=Number(localStorage.tails)+1;
+    updateResults()
+  }
 }
 
 // Check browser support
