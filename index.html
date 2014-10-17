@@ -26,12 +26,12 @@ function doFlip() {
   if (Math.random() > 0.5) {
     // heads
     localStorage.heads=Number(localStorage.heads)+1; 
-    document.getElementById("coin").innerHTML = "<img src='img/heads.png'>";
+    document.getElementById("coin").innerHTML = "<img src='./img/heads.png'>";
     updateResults();
   } else {
     // tails
     localStorage.tails=Number(localStorage.tails)+1;
-    document.getElementById("coin").innerHTML = "<img src='img/tails.png'>";
+    document.getElementById("coin").innerHTML = "<img src='./img/tails.png'>";
     updateResults()
   }
 }
