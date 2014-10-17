@@ -6,6 +6,9 @@
 
 <p>The GitHub project page is at <a href="https://github.com/mikewarot/flipper">https://github.com/mikewarot/flipper</a>.</p>
 
+<div id="userinfo">Name: <input type="text" id="myname" onchange="updateName()"></div>
+
+
 <div id="coin"><img src='./img/blank.png'></div>  <! public domain coin images via http://en.wikipedia.org/wiki/American_Silver_Eagle >
 
 <div id="result"></div>
@@ -16,6 +19,11 @@
 <button type="button" onclick="localStorage.tails=Number(localStorage.tails)+1; updateResults()">Tails</button>
 
 <script>
+function updateName() {
+  var x = myname.value;
+  localStorage.setItem("name",x);
+}
+
 function updateResults() {
     document.getElementById("result").innerHTML = 
 "Heads : " + localStorage.getItem("heads") + "<br>Tails : " + localStorage.getItem("tails")+
@@ -42,6 +50,7 @@ if (typeof(Storage) != "undefined") {
     // localStorage.setItem("heads", "0");
     // localStorage.setItem("tails", "0");
     // Retrieve
+    myname.value = localStorage.getItem("name");
     document.getElementById("result").innerHTML = 
 "Heads : " + localStorage.getItem("heads") + "<br>Tails : " + localStorage.getItem("tails")+
 "<br>Total flips : " + (Number(localStorage.heads)+Number(localStorage.tails));
