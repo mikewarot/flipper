@@ -4,15 +4,24 @@
 
 This is a game, where you will flip a virtual coin to get heads or tails, and accumulate results.
 
-
 <div id="result"></div>
 
+<button type="button" onclick="localStorage.heads=0; localStorage.tails=0; updateResults();">Reset Counters</button>
+<button type="button" onclick="localStorage.heads=Number(localStorage.heads)+1; updateResults()">Heads</button>
+<button type="button" onclick="localStorage.tails=Number(localStorage.tails)+1; updateResults()">Tails</button>
+
 <script>
+function updateResults() {
+    document.getElementById("result").innerHTML = 
+"Heads : " + localStorage.getItem("heads") + "<br>Tails : " + localStorage.getItem("tails")+
+"<br>Total flips : " + (Number(localStorage.heads)+Number(localStorage.tails));  
+}
+
 // Check browser support
 if (typeof(Storage) != "undefined") {
     // Store
-    localStorage.setItem("heads", "0");
-    localStorage.setItem("tails", "0");
+    // localStorage.setItem("heads", "0");
+    // localStorage.setItem("tails", "0");
     // Retrieve
     document.getElementById("result").innerHTML = 
 "Heads : " + localStorage.getItem("heads") + "<br>Tails : " + localStorage.getItem("tails")+
