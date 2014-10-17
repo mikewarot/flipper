@@ -15,7 +15,8 @@ if (typeof(Storage) != "undefined") {
     localStorage.setItem("tails", "0");
     // Retrieve
     document.getElementById("result").innerHTML = 
-"Heads : " + localStorage.getItem("heads") + "<br>Tails : " + localStorage.getItem("tails");
+"Heads : " + localStorage.getItem("heads") + "<br>Tails : " + localStorage.getItem("tails")+
+"<br>Total flips : " + (Number(localStorage.heads)+Number(localStorage.tails));
 } else {
     document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
 }
