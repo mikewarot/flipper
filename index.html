@@ -6,7 +6,7 @@
 
 <p>The GitHub project page is at <a href="https://github.com/mikewarot/flipper">https://github.com/mikewarot/flipper</a>.</p>
 
-<div id="coin"></div>  <! coin images taken from http://www.random.org/coins/?num=5&cur=60-usd.0050c >
+<div id="coin"></div>  <! public domain coin images via http://en.wikipedia.org/wiki/American_Silver_Eagle >
 
 <div id="result"></div>
 
@@ -26,12 +26,12 @@ function doFlip() {
   if (Math.random() > 0.5) {
     // heads
     localStorage.heads=Number(localStorage.heads)+1; 
-    document.getElementById("coin").innerHTML = "<img src='img/heads.jpg'>";
+    document.getElementById("coin").innerHTML = "<img src='img/heads.png'>";
     updateResults();
   } else {
     // tails
     localStorage.tails=Number(localStorage.tails)+1;
-    document.getElementById("coin").innerHTML = "<img src='img/tails.jpg'>";
+    document.getElementById("coin").innerHTML = "<img src='img/tails.png'>";
     updateResults()
   }
 }
